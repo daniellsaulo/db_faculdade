@@ -24,14 +24,14 @@ ALTER TABLE telefone
 	CHANGE fk_cod_tipo_telefone fk_cod_tipo INT(4) NOT NULL;
 
 ALTER TABLE endereco
-    CHANGE nome_rua nome_rua CHAR(50) NOT NULL,
-    CHANGE numero_rua numero_rua INT(4) NOT NULL,
-    CHANGE complemento complemento CHAR(20) NULL,
-    CHANGE CEP CEP CHAR(8) NOT NULL;
+	CHANGE nome_rua nome_rua CHAR(50) NOT NULL,
+	CHANGE numero_rua numero_rua INT(4) NOT NULL,
+	CHANGE complemento complemento CHAR(20) NULL,
+	CHANGE CEP CEP CHAR(8) NOT NULL;
 
 ALTER TABLE aluno
-    CHANGE nome_aluno nome_aluno CHAR(20),
-    CHANGE sobrenome_aluno sobrenome_aluno CHAR(20);
+	CHANGE nome_aluno nome_aluno CHAR(20),
+	CHANGE sobrenome_aluno sobrenome_aluno CHAR(20);
 
 ALTER TABLE telefone_aluno
-    CHANGE fk_aluno_RA fk_RA INT (4) NOT NULL;
+	CHANGE fk_aluno_RA fk_RA INT (4) NOT NULL;
