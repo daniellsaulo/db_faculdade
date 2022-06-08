@@ -31,7 +31,10 @@ ALTER TABLE endereco
 
 ALTER TABLE aluno
 	CHANGE nome_aluno nome_aluno CHAR(20),
-	CHANGE sobrenome_aluno sobrenome_aluno CHAR(20);
+	CHANGE sobrenome_aluno sobrenome_aluno CHAR(20)
+	CHANGE fk_cod_curso fk_cod_curso INT(4),
+	CHANGE fk_cod_turma fk_cod_turma INT(4),
+	CHANGE fk_cod_endereco fk_cod_endereco INT(4);
 
 ALTER TABLE telefone_aluno
 	CHANGE fk_aluno_RA fk_RA INT (4) NOT NULL;
