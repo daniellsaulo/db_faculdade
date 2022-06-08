@@ -5,12 +5,12 @@ USE db_faculdade;
 CREATE TABLE IF NOT EXISTS departamento(
 	cod_departamento INT(4) PRIMARY KEY NOT NULL AUTO_INCREMENT,
     nome_departamento CHAR(20)
-);
+)AUTO_INCREMENT = 1;
 
 CREATE TABLE IF NOT EXISTS tipo_logradouro(
 	cod_tipo_logradouro INT(4) PRIMARY KEY NOT NULL AUTO_INCREMENT,
     tipo_logradouro CHAR(11)
-);
+)AUTO_INCREMENT = 1;
 
 CREATE TABLE IF NOT EXISTS endereco(
 	cod_endereco INT(4) PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -20,19 +20,19 @@ CREATE TABLE IF NOT EXISTS endereco(
     CEP CHAR(8),
     fk_cod_tipo_logradouro INT(4) NOT NULL,
     FOREIGN KEY (fk_cod_tipo_logradouro) REFERENCES tipo_logradouro(cod_tipo_logradouro)
-);
+)AUTO_INCREMENT = 1;
 
 CREATE TABLE IF NOT EXISTS tipo_telefone(
 	cod_tipo_telefone INT(4) PRIMARY KEY NOT NULL AUTO_INCREMENT,
     tipo_telefone CHAR(8)
-);
+)AUTO_INCREMENT = 1;
 
 CREATE TABLE IF NOT EXISTS telefone(
 	cod_telefone INT(4) PRIMARY KEY NOT NULL AUTO_INCREMENT,
     num_telefone CHAR(20),
     fk_cod_tipo_telefone INT(4) NOT NULL,
     FOREIGN KEY (fk_cod_tipo_telefone) REFERENCES tipo_telefone(cod_tipo_telefone)
-);
+)AUTO_INCREMENT = 1;
 
 CREATE TABLE IF NOT EXISTS disciplina(
 	cod_disciplina INT(4) PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS disciplina(
     n_alunos INT(4),
     fk_cod_departamento INT(4) NOT NULL,
     FOREIGN KEY (fk_cod_departamento) REFERENCES departamento(cod_departamento)
-);
+)AUTO_INCREMENT = 1;
 
 CREATE TABLE IF NOT EXISTS professor(
 	cod_professor INT(4) PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS professor(
     status BOOLEAN,
     fk_cod_departamento INT(4) NOT NULL,
     FOREIGN KEY (fk_cod_departamento) REFERENCES departamento(cod_departamento)
-);
+)AUTO_INCREMENT = 1;
 
 CREATE TABLE IF NOT EXISTS disciplina_professor(
 	fk_cod_professor INT(4) NOT NULL,
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS curso(
     nome_curso CHAR(20),
     fk_cod_departamento INT(4) NOT NULL,
     FOREIGN KEY (fk_cod_departamento) REFERENCES departamento(cod_departamento)
-);
+)AUTO_INCREMENT = 1;
 
 CREATE TABLE IF NOT EXISTS curso_disciplina(
 	fk_cod_curso INT(4) NOT NULL,
@@ -84,7 +84,7 @@ CREATE TABLE IF NOT EXISTS turma(
     dt_fim DATE,
     fk_cod_curso INT(4) NOT NULL,
     FOREIGN KEY (fk_cod_curso) REFERENCES curso(cod_curso)
-);
+)AUTO_INCREMENT = 1;
 
 CREATE TABLE aluno(
 	RA INT(4) PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -103,7 +103,7 @@ CREATE TABLE aluno(
     FOREIGN KEY (fk_cod_curso) REFERENCES curso(cod_curso),
     FOREIGN KEY (fk_cod_turma) REFERENCES turma(cod_turma),
     FOREIGN KEY (fk_cod_endereco) REFERENCES endereco(cod_endereco)
-);
+)AUTO_INCREMENT = 1;
 
 CREATE TABLE IF NOT EXISTS telefone_aluno(
 	cod_tel_aluno INT(4) PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -111,7 +111,7 @@ CREATE TABLE IF NOT EXISTS telefone_aluno(
     fk_cod_telefone INT(4) NOT NULL,
     FOREIGN KEY (fk_aluno_RA) REFERENCES aluno(RA),
     FOREIGN KEY (fk_cod_telefone) REFERENCES telefone(cod_telefone)
-);
+)AUTO_INCREMENT = 1;
 
 CREATE TABLE IF NOT EXISTS historico(
 	cod_historico INT(4) PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -119,7 +119,7 @@ CREATE TABLE IF NOT EXISTS historico(
     dt_fim DATE,
     fk_RA INT(4) NOT NULL,
     FOREIGN KEY (fk_RA) REFERENCES aluno(RA)
-);
+)AUTO_INCREMENT = 1;
 
 CREATE TABLE IF NOT EXISTS disciplina_historico(
 	fk_cod_disciplina INT(4),
