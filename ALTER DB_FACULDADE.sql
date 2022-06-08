@@ -8,7 +8,8 @@ ALTER TABLE professor
 	CHANGE sobrenome_professor sobrenome_professor CHAR(50) NOT NULL;
 
 ALTER TABLE curso
-	CHANGE fk_cod_departamento fk_cod_departamento INT(4);
+	CHANGE fk_cod_departamento fk_cod_departamento INT(4),
+	AUTO_INCREMENT = 1;
 
 ALTER TABLE turma
 	CHANGE fk_cod_curso fk_cod_curso INT(4);
