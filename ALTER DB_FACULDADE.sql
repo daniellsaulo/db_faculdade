@@ -8,8 +8,7 @@ ALTER TABLE professor
 	CHANGE sobrenome_professor sobrenome_professor CHAR(50) NOT NULL;
 
 ALTER TABLE curso
-	CHANGE fk_cod_departamento fk_cod_departamento INT(4),
-	AUTO_INCREMENT = 1;
+	CHANGE fk_cod_departamento fk_cod_departamento INT(4);
 
 ALTER TABLE turma
 	CHANGE fk_cod_curso fk_cod_curso INT(4);
@@ -32,10 +31,34 @@ ALTER TABLE endereco
 
 ALTER TABLE aluno
 	CHANGE nome_aluno nome_aluno CHAR(20),
-	CHANGE sobrenome_aluno sobrenome_aluno CHAR(20)
+	CHANGE sobrenome_aluno sobrenome_aluno CHAR(20),
 	CHANGE fk_cod_curso fk_cod_curso INT(4),
 	CHANGE fk_cod_turma fk_cod_turma INT(4),
 	CHANGE fk_cod_endereco fk_cod_endereco INT(4);
 
 ALTER TABLE telefone_aluno
 	CHANGE fk_aluno_RA fk_RA INT (4) NOT NULL;
+
+ALTER TABLE departamento AUTO_INCREMENT=1;
+
+ALTER TABLE professor AUTO_INCREMENT=1;
+
+ALTER TABLE curso AUTO_INCREMENT=1;
+
+ALTER TABLE turma AUTO_INCREMENT=1;
+
+ALTER TABLE disciplina AUTO_INCREMENT=1;
+
+ALTER TABLE tipo_telefone AUTO_INCREMENT=1;
+
+ALTER TABLE telefone AUTO_INCREMENT=1;
+
+ALTER TABLE endereco AUTO_INCREMENT=1;
+
+ALTER TABLE aluno AUTO_INCREMENT=1;
+
+ALTER TABLE telefone_aluno AUTO_INCREMENT=1;
+
+ALTER TABLE tipo_logradouro AUTO_INCREMENT=1;
+
+ALTER TABLE historico AUTO_INCREMENT=1;
