@@ -544,13 +544,3 @@ INSERT aluno_disciplina VALUES
     ( 18 , 20 ),
     ( 19 , 20 ),
     ( 20 , 20 );
-
-
-
-6)Cadastre 10 professores e 3 deles estão inativos, sem turmas
-
-quadra
-avenida
-chacara
-condominio
-setor
